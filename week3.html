@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exotic Fruits World</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #a32020;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        nav {
+            background-color: #1a5653;
+            padding: 0.5rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .fruit-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .fruit-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .fruit-item:hover {
+            background-color: #a32020;
+            color: white;
+        }
+
+
+
+        .fruit-item img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .fruit-item h3 {
+            color: #c73232;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .fruit-item p {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .fruit-container {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .fruit-item img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Hello World</h1>
+        <p>Welcome to the Exotic Fruits World</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#fruits">Fruits</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="home">
+            <h2>Discover Exotic Fruits</h2>
+            <p>Exotic fruits are unique and delicious fruits that are not commonly found in most local grocery stores.
+                They often come from tropical or subtropical regions and offer a wide range of flavors and nutritional
+                benefits.</p>
+        </section>
+
+        <section id="fruits">
+            <h2>Our Exotic Fruit Collection</h2>
+            <div class="fruit-container">
+                <div class="fruit-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Pitaya_cross_section_ed2.jpg/800px-Pitaya_cross_section_ed2.jpg"
+                        alt="Dragon Fruit">
+                    <h3>Dragon Fruit</h3>
+                    <p>A vibrant pink fruit with white flesh and black seeds. It has a mild sweet taste and is rich in
+                        antioxidants.</p>
+                </div>
+                <div class="fruit-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Durian_in_black.jpg/1200px-Durian_in_black.jpg"
+                        alt="Durian">
+                    <h3>Durian</h3>
+                    <p>Known as the "king of fruits," durian has a strong odor but a creamy, sweet flavor loved by many.
+                    </p>
+                </div>
+                <div class="fruit-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Rambutans_by_Muhammad_Mahdi_Karim.jpg/220px-Rambutans_by_Muhammad_Mahdi_Karim.jpg"
+                        alt="Rambutan">
+                    <h3>Rambutan</h3>
+                    <p>This hairy red fruit has sweet, translucent flesh similar to lychee. It's native to Southeast
+                        Asia.</p>
+                </div>
+                <div class="fruit-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Mangosteens_-_whole_and_opened.jpg/220px-Mangosteens_-_whole_and_opened.jpg"
+                        alt="Mangosteen">
+                    <h3>Mangosteen</h3>
+                    <p>Often called the "queen of fruits," mangosteen has a delicate, sweet-tart flavor and is rich in
+                        antioxidants.</p>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are passionate about introducing people to the wonderful world of exotic fruits. Our mission is to
+                share these incredible natural treasures and promote biodiversity.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Exotic Fruits World | All rights reserved</p>
+    </footer>
+</body>
+
+</html>
