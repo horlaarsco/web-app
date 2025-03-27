@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const subject = document.getElementById('subject').value;
         const message = document.getElementById('message').value;
         
-        const mailtoLink = `mailto:your-email@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+        const mailtoLink = `mailto:sodiq@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
             `Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`
         )}`;
         
