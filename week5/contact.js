@@ -1,6 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
-    
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const message = document.getElementById('message');
+    const messageError = document.getElementById('messageError');
+
+    name.addEventListener('input', function() {
+        if (this.value.trim()) {
+            this.classList.remove('invalid');
+        }
+    });
+
+    email.addEventListener('input', function() {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (this.value.trim() && emailPattern.test(this.value)) {
+            this.classList.remove('invalid');
+        }
+    });
+
+    message.addEventListener('input', function() {
+        if (this.value.trim().length >= 10) {
+            this.classList.remove('invalid');
+            messageError.classList.remove('show');
+        }
+    });
+
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
