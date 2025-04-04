@@ -187,6 +187,91 @@
         .error-message.show {
             display: block;
         }
+
+        .fruit-of-day {
+            background-color: #fff3e6;
+            padding: 2rem 0;
+            margin-bottom: 20px;
+        }
+
+        .featured-fruit {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .featured-fruit img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .featured-fruit-content {
+            flex: 1;
+        }
+
+        .featured-label {
+            background-color: #a32020;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .featured-fruit-content h2 {
+            color: #333;
+            margin: 10px 0;
+            font-size: 2rem;
+        }
+
+        .benefits {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .benefits h3 {
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .benefits ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .benefits li {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .benefits {
+                text-align: center;
+            }
+
+            .benefits ul {
+                text-align: left;
+            }
+
+            .featured-fruit {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .featured-fruit img {
+                width: 200px;
+                height: 200px;
+            }
+        }
     </style>
 </head>
 
@@ -204,6 +289,12 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+
+    <div class="fruit-of-day">
+        <div class="container">
+            <!-- Fruit of the Day Section -->
+        </div>
+    </div>
 
     <div class="container">
         <section id="home">
@@ -296,6 +387,7 @@
         <p>&copy; 2025 Exotic Fruits World | All rights reserved</p>
     </footer>
 
+    <script src="./fruitOfDay.js"></script>
     <script src="./contact.js"></script>
 </body>
 
