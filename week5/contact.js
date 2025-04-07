@@ -1,90 +1,78 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
-    const name = document.getElementById('name');
-    const email = document.getElementById('email');
-    const message = document.getElementById('message');
-    const messageError = document.getElementById('messageError');
-
-    name.addEventListener('input', function() {
-        if (this.value.trim()) {
-            this.classList.remove('invalid');
+$(document).ready(function() {
+    $('#name').on('input', function() {
+        if ($(this).val().trim()) {
+            $(this).removeClass('invalid');
         }
     });
 
-    email.addEventListener('input', function() {
+    $('#email').on('input', function() {
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (this.value.trim() && emailPattern.test(this.value)) {
-            this.classList.remove('invalid');
+        if ($(this).val().trim() && emailPattern.test($(this).val())) {
+            $(this).removeClass('invalid');
         }
     });
 
-    message.addEventListener('input', function() {
-        if (this.value.trim().length >= 10) {
-            this.classList.remove('invalid');
-            messageError.classList.remove('show');
+    $('#message').on('input', function() {
+        if ($(this).val().trim().length >= 10) {
+            $(this).removeClass('invalid');
+            $('#messageError').removeClass('show');
         }
     });
 
-    contactForm.addEventListener('submit', function(e) {
+    $('#contactForm').on('submit', function(e) {
         e.preventDefault();
         
-        // Get all form inputs
-        const name = document.getElementById('name');
-        const email = document.getElementById('email');
-        const subject = document.getElementById('subject');
-        const message = document.getElementById('message');
-        const messageError = document.getElementById('messageError');
-        
         // Reset invalid states
-        const formControls = document.querySelectorAll('.form-control');
-        formControls.forEach(control => control.classList.remove('invalid'));
-        messageError.classList.remove('show');
+        $('.form-control').removeClass('invalid');
+        $('#messageError').removeClass('show');
         
         let isValid = true;
         let firstInvalid = null;
 
         // Validate name
-        if (!name.value.trim()) {
-            name.classList.add('invalid');
+        if (!$('#name').val().trim()) {
+            $('#name').addClass('invalid');
             isValid = false;
-            firstInvalid = firstInvalid || name;
+            firstInvalid = firstInvalid || $('#name')[0];
         }
 
         // Validate email
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!email.value.trim() || !emailPattern.test(email.value)) {
-            email.classList.add('invalid');
+        if (!$('#email').val().trim() || !emailPattern.test($('#email').val())) {
+            $('#email').addClass('invalid');
             isValid = false;
-            firstInvalid = firstInvalid || email;
+            firstInvalid = firstInvalid || $('#email')[0];
         }
 
         // Validate message length
-        if (!message.value.trim() || message.value.length < 10) {
-            message.classList.add('invalid');
-            messageError.classList.add('show');
+        if (!$('#message').val().trim() || $('#message').val().length < 10) {
+            $('#message').addClass('invalid');
+            $('#messageError').addClass('show');
             isValid = false;
-            firstInvalid = firstInvalid || message;
+            firstInvalid = firstInvalid || $('#message')[0];
         }
 
         // Focus on first invalid input
         if (firstInvalid) {
-            firstInvalid.focus();
+            $(firstInvalid).focus();
         }
 
-        // If all valid, you can submit the form here
+        // If all valid, submit the form
         if (isValid) {
             console.log('Form is valid, submitting...');
-            const mailtoLink = `mailto:sodiq@example.com?subject=${encodeURIComponent(subject.value)}&body=${encodeURIComponent(
-                `Name: ${name.value}\nEmail: ${email.value}\n\nMessage: ${message.value}`
+            const mailtoLink = `mailto:sodiq@example.com?subject=${encodeURIComponent($('#subject').val())}&body=${encodeURIComponent(
+                `Name: ${$('#name').val()}\nEmail: ${$('#email').val()}\n\nMessage: ${$('#message').val()}`
             )}`;
             
-            const link = document.createElement('a');
-            link.href = mailtoLink;
-            link.target = '_blank';
+            const link = $('<a>', {
+                href: mailtoLink,
+                target: '_blank',
+                style: 'display: none'
+            }).appendTo('body');
             
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            link[0].click();
+            console.log(link)
+            link.remove();
         }
     });
-}); 
+});
