@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exotic Fruits World</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .fruit-item:hover {
+            background-color: #a32020;
+            color: white;
+        }
+
+        .fruit-item:hover h3 {
+            color: white !important;
+        }
+
+        .error-message {
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .form-control.invalid {
+            border-color: #ff0000;
+            outline-color: #ff0000;
+        }
+
+        @media (max-width: 768px) {
+            .featured-fruit img {
+                max-width: 300px;
+                margin: 0 auto 1rem;
+            }
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header class="bg-danger text-white text-center py-3">
+        <h1>Hello World</h1>
+        <p class="mb-0">Welcome to the Exotic Fruits World</p>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#fruits">Fruits</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="fruit-of-day py-4 mb-4">
+        <div class="container">
+            <!-- Fruit of the Day Section -->
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="home" class="mb-5">
+            <h2>Discover Exotic Fruits</h2>
+            <p>Exotic fruits are unique and delicious fruits that are not commonly found in most local grocery stores.
+                They often come from tropical or subtropical regions and offer a wide range of flavors and nutritional
+                benefits.</p>
+        </section>
+
+        <section id="fruits" class="mb-5">
+            <h2>Our Exotic Fruit Collection</h2>
+            <div class="row g-4 mt-3">
+                <div class="col-md-6 col-lg-3">
+                    <div class="fruit-item card h-100 shadow-sm">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Pitaya_cross_section_ed2.jpg/800px-Pitaya_cross_section_ed2.jpg"
+                            class="card-img-top rounded-circle mx-auto mt-3"
+                            style="width: 200px; height: 200px; object-fit: cover;" alt="Dragon Fruit">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Dragon Fruit</h3>
+                            <p class="card-text">A vibrant pink fruit with white flesh and black seeds. It has a mild
+                                sweet taste and is rich in
+                                antioxidants.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="fruit-item card h-100 shadow-sm">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Durian_in_black.jpg/1200px-Durian_in_black.jpg"
+                            class="card-img-top rounded-circle mx-auto mt-3"
+                            style="width: 200px; height: 200px; object-fit: cover;" alt="Durian">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Durian</h3>
+                            <p class="card-text">Known as the "king of fruits," durian has a strong odor but a creamy,
+                                sweet flavor loved by many.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="fruit-item card h-100 shadow-sm">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Rambutans_by_Muhammad_Mahdi_Karim.jpg/220px-Rambutans_by_Muhammad_Mahdi_Karim.jpg"
+                            class="card-img-top rounded-circle mx-auto mt-3"
+                            style="width: 200px; height: 200px; object-fit: cover;" alt="Rambutan">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Rambutan</h3>
+                            <p class="card-text">This hairy red fruit has sweet, translucent flesh similar to lychee.
+                                It's native to Southeast Asia.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="fruit-item card h-100 shadow-sm">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Mangosteens_-_whole_and_opened.jpg/220px-Mangosteens_-_whole_and_opened.jpg"
+                            class="card-img-top rounded-circle mx-auto mt-3"
+                            style="width: 200px; height: 200px; object-fit: cover;" alt="Mangosteen">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Mangosteen</h3>
+                            <p class="card-text">Often called the "queen of fruits," mangosteen has a delicate,
+                                sweet-tart flavor and is rich in antioxidants.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="mb-5">
+            <h2>About Us</h2>
+            <p>We are passionate about introducing people to the wonderful world of exotic fruits. Our mission is to
+                share these incredible natural treasures and promote biodiversity.</p>
+        </section>
+
+        <section id="contact" class="mb-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h2>Contact Us</h2>
+                    <p>Have questions about exotic fruits or want to share your experiences? Get in touch with us!</p>
+
+                    <form id="contactForm" class="card shadow-sm">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name:</label>
+                                <input type="text" id="name" name="name" class="form-control" />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" id="email" name="email" class="form-control" />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject:</label>
+                                <select id="subject" name="subject" class="form-select">
+                                    <option value="general">General Inquiry</option>
+                                    <option value="fruit-info">Fruit Information</option>
+                                    <option value="suggestion">Suggestion</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message:</label>
+                                <textarea id="message" name="message" rows="5" class="form-control"></textarea>
+                                <p id="messageError" class="error-message text-danger small mt-1">Message must be at
+                                    least 10 characters
+                                    long</p>
+                            </div>
+
+                            <button type="submit" class="btn btn-danger">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p class="mb-0">&copy; 2025 Exotic Fruits World | All rights reserved</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./fruitOfDay.js"></script>
+    <script src="./contact.js"></script>
+</body>
+
+</html>
